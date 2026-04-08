@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="core" cx="50%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#8a8aaa" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#5a5a7a" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#2a2a3a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula" cx="45%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#3a3a5a" stop-opacity="0.5"/>
+      <stop offset="40%" stop-color="#2a2a4a" stop-opacity="0.25"/>
+      <stop offset="80%" stop-color="#1a1a2e" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#1a1a2e" stop-opacity="0"/>
+      <stop offset="85%" stop-color="#1a1a2e" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Outer halo -->
+  <circle cx="60" cy="60" r="58" fill="url(#halo)"/>
+  <!-- Nebula cloud -->
+  <circle cx="56" cy="58" r="42" fill="url(#nebula)"/>
+  <!-- Orbital rings — multiple layers -->
+  <ellipse cx="60" cy="60" rx="52" ry="12" fill="none" stroke="#1a1a2e" stroke-width="0.3" stroke-opacity="0.12" transform="rotate(-15 60 60)"/>
+  <ellipse cx="60" cy="60" rx="48" ry="16" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-opacity="0.2" transform="rotate(-30 60 60)"/>
+  <ellipse cx="60" cy="60" rx="42" ry="20" fill="none" stroke="#2a2a3a" stroke-width="0.7" stroke-opacity="0.3" transform="rotate(25 60 60)"/>
+  <ellipse cx="60" cy="60" rx="36" ry="13" fill="none" stroke="#1a1a2e" stroke-width="0.4" stroke-opacity="0.18" transform="rotate(55 60 60)"/>
+  <ellipse cx="60" cy="60" rx="30" ry="22" fill="none" stroke="#2a2a3a" stroke-width="0.6" stroke-opacity="0.22" transform="rotate(-50 60 60)"/>
+  <ellipse cx="60" cy="60" rx="24" ry="9" fill="none" stroke="#1a1a2e" stroke-width="0.5" stroke-opacity="0.25" transform="rotate(10 60 60)"/>
+  <!-- Core -->
+  <circle cx="60" cy="60" r="14" fill="url(#core)"/>
+  <circle cx="60" cy="60" r="5" fill="#4a4a6a" opacity="0.7"/>
+  <circle cx="60" cy="60" r="2" fill="#7a7a9a" opacity="0.9"/>
+  <!-- Dense particle field — inner -->
+  <circle cx="54" cy="48" r="1.4" fill="#3a3a5a" opacity="0.6"/>
+  <circle cx="67" cy="52" r="1.1" fill="#2a2a3a" opacity="0.55"/>
+  <circle cx="52" cy="65" r="1.3" fill="#3a3a5a" opacity="0.5"/>
+  <circle cx="70" cy="68" r="1.0" fill="#2a2a3a" opacity="0.6"/>
+  <circle cx="58" cy="42" r="0.9" fill="#4a4a6a" opacity="0.5"/>
+  <circle cx="72" cy="57" r="1.2" fill="#2a2a3a" opacity="0.45"/>
+  <circle cx="48" cy="58" r="0.8" fill="#3a3a5a" opacity="0.55"/>
+  <circle cx="63" cy="75" r="1.1" fill="#2a2a3a" opacity="0.4"/>
+  <circle cx="55" cy="73" r="0.7" fill="#4a4a6a" opacity="0.5"/>
+  <circle cx="68" cy="44" r="1.0" fill="#2a2a3a" opacity="0.5"/>
+  <!-- Mid-field particles -->
+  <circle cx="38" cy="40" r="1.5" fill="#2a2a3a" opacity="0.45"/>
+  <circle cx="82" cy="48" r="1.3" fill="#1a1a2e" opacity="0.4"/>
+  <circle cx="78" cy="75" r="1.6" fill="#2a2a3a" opacity="0.38"/>
+  <circle cx="40" cy="78" r="1.2" fill="#1a1a2e" opacity="0.42"/>
+  <circle cx="85" cy="62" r="1.0" fill="#2a2a3a" opacity="0.35"/>
+  <circle cx="35" cy="55" r="1.4" fill="#1a1a2e" opacity="0.38"/>
+  <circle cx="75" cy="35" r="1.1" fill="#2a2a3a" opacity="0.4"/>
+  <circle cx="42" cy="32" r="0.9" fill="#1a1a2e" opacity="0.35"/>
+  <circle cx="80" cy="82" r="1.3" fill="#2a2a3a" opacity="0.3"/>
+  <circle cx="32" cy="70" r="1.0" fill="#1a1a2e" opacity="0.32"/>
+  <!-- Outer dust particles -->
+  <circle cx="22" cy="35" r="1.0" fill="#1a1a2e" opacity="0.25"/>
+  <circle cx="95" cy="42" r="0.8" fill="#2a2a3a" opacity="0.22"/>
+  <circle cx="90" cy="85" r="1.1" fill="#1a1a2e" opacity="0.2"/>
+  <circle cx="25" cy="88" r="0.9" fill="#2a2a3a" opacity="0.22"/>
+  <circle cx="15" cy="58" r="0.7" fill="#1a1a2e" opacity="0.18"/>
+  <circle cx="100" cy="55" r="0.8" fill="#2a2a3a" opacity="0.2"/>
+  <circle cx="60" cy="14" r="0.9" fill="#1a1a2e" opacity="0.22"/>
+  <circle cx="60" cy="105" r="0.7" fill="#2a2a3a" opacity="0.18"/>
+  <circle cx="18" cy="45" r="0.6" fill="#1a1a2e" opacity="0.15"/>
+  <circle cx="102" cy="70" r="0.7" fill="#2a2a3a" opacity="0.17"/>
+  <!-- Micro dust -->
+  <circle cx="45" cy="36" r="0.5" fill="#2a2a3a" opacity="0.35"/>
+  <circle cx="76" cy="62" r="0.4" fill="#1a1a2e" opacity="0.3"/>
+  <circle cx="50" cy="82" r="0.5" fill="#2a2a3a" opacity="0.28"/>
+  <circle cx="72" cy="80" r="0.4" fill="#1a1a2e" opacity="0.32"/>
+  <circle cx="44" cy="50" r="0.3" fill="#3a3a5a" opacity="0.4"/>
+  <circle cx="65" cy="40" r="0.4" fill="#2a2a3a" opacity="0.35"/>
+  <circle cx="56" cy="56" r="0.3" fill="#4a4a6a" opacity="0.45"/>
+  <circle cx="64" cy="64" r="0.3" fill="#3a3a5a" opacity="0.4"/>
+</svg>
