@@ -14,7 +14,19 @@ body{font-family:'Inter',sans-serif;background:#f5f0e8;color:#1a1a2e;line-height
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(245,240,232,0.85);transition:transform 0.4s ease}
 .nav.hidden{transform:translateY(-100%)}
 .nav-logo{font-size:20px;font-weight:300;letter-spacing:0.25em;color:#1a1a2e;opacity:0.8;text-decoration:none}
+.nav-right{display:flex;align-items:center;gap:24px}
 .nav-links{display:flex;gap:32px}
+.lang-switcher{display:flex;gap:4px;overflow-x:auto;max-width:320px;scrollbar-width:none}
+.lang-switcher::-webkit-scrollbar{display:none}
+.lang-btn{padding:4px 10px;border:1px solid rgba(26,26,46,0.1);border-radius:999px;font-size:11px;font-weight:400;color:#1a1a2e;opacity:0.4;cursor:pointer;background:transparent;transition:all 0.3s;white-space:nowrap}
+.lang-btn:hover{opacity:0.7}
+.lang-btn.active{opacity:0.9;background:rgba(26,26,46,0.08);border-color:rgba(26,26,46,0.25)}
+body[dir="rtl"]{direction:rtl;text-align:right}
+body[dir="rtl"] .nav{flex-direction:row-reverse}
+body[dir="rtl"] .nav-right{flex-direction:row-reverse}
+body[dir="rtl"] .feature-card{text-align:right}
+body[dir="rtl"] .mockup-msg.user{align-self:flex-start}
+body[dir="rtl"] .mockup-msg.ai{align-self:flex-end}
 .nav-links a{text-decoration:none;color:#1a1a2e;opacity:0.5;font-size:14px;font-weight:400;transition:opacity 0.3s}
 .nav-links a:hover{opacity:0.9}
 
@@ -104,11 +116,14 @@ section{padding:120px 40px}
 <!-- NAV -->
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">nova</a>
-  <div class="nav-links">
-    <a href="#features">Funkce</a>
-    <a href="#how">Jak to funguje</a>
-    <a href="#tech">Tech</a>
-    <a href="#download">Stáhnout</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#features" data-i18n="nav_features">Funkce</a>
+      <a href="#how" data-i18n="nav_how">Jak to funguje</a>
+      <a href="#tech" data-i18n="nav_tech">Tech</a>
+      <a href="#download" data-i18n="nav_download">Stáhnout</a>
+    </div>
+    <div class="lang-switcher" id="langSwitcher"></div>
   </div>
 </nav>
 
@@ -117,45 +132,45 @@ section{padding:120px 40px}
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="hero-content">
     <h1 class="hero-title">nova</h1>
-    <p class="hero-sub">Tvůj osobní AI asistent</p>
-    <a href="#download" class="hero-cta">Začít používat</a>
+    <p class="hero-sub" data-i18n="hero_sub">Tvůj osobní AI asistent</p>
+    <a href="#download" class="hero-cta" data-i18n="hero_cta">Začít používat</a>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section class="features-section" id="features">
   <div class="container">
-    <h2 class="section-title fade-in">Co Nova umí</h2>
+    <h2 class="section-title fade-in" data-i18n="features_title">Co Nova umí</h2>
     <div class="features-grid">
       <div class="feature-card fade-in">
         <svg class="feature-icon" viewBox="0 0 40 40"><circle cx="20" cy="14" r="6" fill="none" stroke="#1a1a2e" stroke-width="1.5"/><path d="M10 34c0-6 4-10 10-10s10 4 10 10" fill="none" stroke="#1a1a2e" stroke-width="1.5"/><path d="M32 16v8M28 20h8" stroke="#1a1a2e" stroke-width="1.2" opacity="0.5"/></svg>
-        <h3>Hlasové ovládání</h3>
-        <p>Řekni Nově co potřebuješ. Rozpozná tvůj hlas a odpoví přirozeně česky.</p>
+        <h3 data-i18n="f1_title">Hlasové ovládání</h3>
+        <p data-i18n="f1_desc">Řekni Nově co potřebuješ. Rozpozná tvůj hlas a odpoví přirozeně.</p>
       </div>
       <div class="feature-card fade-in">
         <svg class="feature-icon" viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="22" rx="4" fill="none" stroke="#1a1a2e" stroke-width="1.5"/><line x1="12" y1="16" x2="22" y2="16" stroke="#1a1a2e" stroke-width="1.2" opacity="0.5"/><line x1="12" y1="21" x2="28" y2="21" stroke="#1a1a2e" stroke-width="1.2" opacity="0.3"/><line x1="12" y1="26" x2="18" y2="26" stroke="#1a1a2e" stroke-width="1.2" opacity="0.3"/></svg>
-        <h3>Inteligentní chat</h3>
-        <p>Claude Opus pod kapotou. Rozumí kontextu, pamatuje si konverzaci, odpovídá chytře.</p>
+        <h3 data-i18n="f2_title">Inteligentní chat</h3>
+        <p data-i18n="f2_desc">Claude Opus pod kapotou. Rozumí kontextu, pamatuje si konverzaci, odpovídá chytře.</p>
       </div>
       <div class="feature-card fade-in">
         <svg class="feature-icon" viewBox="0 0 40 40"><rect x="8" y="6" width="24" height="28" rx="3" fill="none" stroke="#1a1a2e" stroke-width="1.5"/><line x1="8" y1="14" x2="32" y2="14" stroke="#1a1a2e" stroke-width="1.2"/><circle cx="14" cy="22" r="2" fill="#1a1a2e" opacity="0.3"/><circle cx="20" cy="22" r="2" fill="#1a1a2e" opacity="0.3"/><circle cx="26" cy="22" r="2" fill="#1a1a2e" opacity="0.15"/></svg>
-        <h3>Kalendář a emaily</h3>
-        <p>Přečte a shrne za tebe. Přidá události, připomene schůzky.</p>
+        <h3 data-i18n="f3_title">Kalendář a emaily</h3>
+        <p data-i18n="f3_desc">Přečte a shrne za tebe. Přidá události, připomene schůzky.</p>
       </div>
       <div class="feature-card fade-in">
         <svg class="feature-icon" viewBox="0 0 40 40"><circle cx="20" cy="18" r="10" fill="none" stroke="#1a1a2e" stroke-width="1.5"/><path d="M20 12v6l4 3" stroke="#1a1a2e" stroke-width="1.2" stroke-linecap="round"/><path d="M14 32h12" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/><path d="M16 35h8" stroke="#1a1a2e" stroke-width="1.2" opacity="0.3"/></svg>
-        <h3>Počasí a zprávy</h3>
-        <p>Aktuální info z celého světa. Předpověď, novinky, kurzy měn.</p>
+        <h3 data-i18n="f4_title">Počasí a zprávy</h3>
+        <p data-i18n="f4_desc">Aktuální info z celého světa. Předpověď, novinky, kurzy měn.</p>
       </div>
       <div class="feature-card fade-in">
         <svg class="feature-icon" viewBox="0 0 40 40"><path d="M8 10h24v20H8z" fill="none" stroke="#1a1a2e" stroke-width="1.5" rx="2"/><path d="M12 18h6M12 22h10M12 26h4" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/><circle cx="28" cy="28" r="6" fill="none" stroke="#1a1a2e" stroke-width="1.2"/><path d="M26 28l1.5 1.5 3-3" stroke="#1a1a2e" stroke-width="1" stroke-linecap="round"/></svg>
-        <h3>Dev mode</h3>
-        <p>Sama opraví vlastní kód. Self-healing architektura s potvrzením.</p>
+        <h3 data-i18n="f5_title">Dev mode</h3>
+        <p data-i18n="f5_desc">Sama opraví vlastní kód. Self-healing architektura s potvrzením.</p>
       </div>
       <div class="feature-card fade-in">
         <svg class="feature-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#1a1a2e" stroke-width="1.5"/><ellipse cx="20" cy="20" rx="14" ry="6" fill="none" stroke="#1a1a2e" stroke-width="0.8" opacity="0.4"/><line x1="20" y1="6" x2="20" y2="34" stroke="#1a1a2e" stroke-width="0.8" opacity="0.3"/></svg>
-        <h3>Vícejazyčnost</h3>
-        <p>15 jazyků s přirozeným hlasem. Čeština, angličtina, němčina a další.</p>
+        <h3 data-i18n="f6_title">Vícejazyčnost</h3>
+        <p data-i18n="f6_desc">15 jazyků s přirozeným hlasem. Čeština, angličtina, němčina a další.</p>
       </div>
     </div>
   </div>
@@ -164,7 +179,7 @@ section{padding:120px 40px}
 <!-- SHOWCASE -->
 <section>
   <div class="container">
-    <h2 class="section-title fade-in">Desktop i mobil</h2>
+    <h2 class="section-title fade-in" data-i18n="showcase_title">Desktop i mobil</h2>
     <div class="showcase fade-in">
       <div class="mockup mockup-desktop">
         <div class="mockup-bar"><span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span></div>
@@ -193,22 +208,22 @@ section{padding:120px 40px}
 <!-- HOW IT WORKS -->
 <section class="features-section" id="how">
   <div class="container">
-    <h2 class="section-title fade-in">Jak to funguje</h2>
+    <h2 class="section-title fade-in" data-i18n="how_title">Jak to funguje</h2>
     <div class="steps fade-in">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Nainstaluj</h3>
-        <p>Desktop app pro macOS nebo mobilní PWA v prohlížeči</p>
+        <h3 data-i18n="step1_title">Nainstaluj</h3>
+        <p data-i18n="step1_desc">Desktop app pro macOS nebo mobilní PWA v prohlížeči</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>Aktivuj</h3>
-        <p>Řekni „Hey Nova" nebo napiš do chatu</p>
+        <h3 data-i18n="step2_title">Aktivuj</h3>
+        <p data-i18n="step2_desc">Řekni „Hey Nova" nebo napiš do chatu</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>Komunikuj</h3>
-        <p>Nova odpovídá hlasem i textem, plní úkoly za tebe</p>
+        <h3 data-i18n="step3_title">Komunikuj</h3>
+        <p data-i18n="step3_desc">Nova odpovídá hlasem i textem, plní úkoly za tebe</p>
       </div>
     </div>
   </div>
@@ -217,7 +232,7 @@ section{padding:120px 40px}
 <!-- TECH -->
 <section class="tech-section" id="tech">
   <div class="container">
-    <h2 class="section-title fade-in">Postaveno na nejlepším</h2>
+    <h2 class="section-title fade-in" data-i18n="tech_title">Postaveno na nejlepším</h2>
     <div class="tech-pills fade-in">
       <span class="tech-pill">Claude Opus</span>
       <span class="tech-pill">Electron</span>
@@ -235,18 +250,18 @@ section{padding:120px 40px}
 <!-- CTA -->
 <section class="cta-section" id="download">
   <div class="container">
-    <h2 class="section-title fade-in">Vyzkoušej Novu</h2>
-    <p class="cta-sub fade-in">Stáhni si desktop app nebo otevři na mobilu</p>
+    <h2 class="section-title fade-in" data-i18n="cta_title">Vyzkoušej Novu</h2>
+    <p class="cta-sub fade-in" data-i18n="cta_sub">Stáhni si desktop app nebo otevři na mobilu</p>
     <div class="cta-buttons fade-in">
-      <a href="#" class="cta-btn">macOS App</a>
-      <a href="#" class="cta-btn">Mobilní PWA</a>
+      <a href="#" class="cta-btn" data-i18n="cta_mac">macOS App</a>
+      <a href="#" class="cta-btn" data-i18n="cta_pwa">Mobilní PWA</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  Nova AI Assistant — vytvořil FxLooper &copy; 2026
+  <span data-i18n="footer">Nova AI Assistant — vytvořil FxLooper</span> &copy; 2026
 </footer>
 
 <!-- THREE.JS -->
@@ -371,6 +386,47 @@ window.addEventListener('resize',()=>{
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth,window.innerHeight);
 });
+
+// ─── i18n ───
+const LANGS=['cs','en','de','fr','es','it','pt','ja','zh','ko','ar','ru'];
+const T={
+cs:{nav_features:'Funkce',nav_how:'Jak to funguje',nav_tech:'Tech',nav_download:'Stáhnout',hero_sub:'Tvůj osobní AI asistent',hero_cta:'Začít používat',features_title:'Co Nova umí',f1_title:'Hlasové ovládání',f1_desc:'Řekni Nově co potřebuješ. Rozpozná tvůj hlas a odpoví přirozeně.',f2_title:'Inteligentní chat',f2_desc:'Claude Opus pod kapotou. Rozumí kontextu, pamatuje si konverzaci, odpovídá chytře.',f3_title:'Kalendář a emaily',f3_desc:'Přečte a shrne za tebe. Přidá události, připomene schůzky.',f4_title:'Počasí a zprávy',f4_desc:'Aktuální info z celého světa. Předpověď, novinky, kurzy měn.',f5_title:'Dev mode',f5_desc:'Sama opraví vlastní kód. Self-healing architektura s potvrzením.',f6_title:'Vícejazyčnost',f6_desc:'15 jazyků s přirozeným hlasem. Čeština, angličtina, němčina a další.',showcase_title:'Desktop i mobil',how_title:'Jak to funguje',step1_title:'Nainstaluj',step1_desc:'Desktop app pro macOS nebo mobilní PWA v prohlížeči',step2_title:'Aktivuj',step2_desc:'Řekni „Hey Nova" nebo napiš do chatu',step3_title:'Komunikuj',step3_desc:'Nova odpovídá hlasem i textem, plní úkoly za tebe',tech_title:'Postaveno na nejlepším',cta_title:'Vyzkoušej Novu',cta_sub:'Stáhni si desktop app nebo otevři na mobilu',cta_mac:'macOS App',cta_pwa:'Mobilní PWA',footer:'Nova AI Assistant — vytvořil FxLooper'},
+en:{nav_features:'Features',nav_how:'How it works',nav_tech:'Tech',nav_download:'Download',hero_sub:'Your personal AI assistant',hero_cta:'Get started',features_title:'What Nova can do',f1_title:'Voice control',f1_desc:'Tell Nova what you need. It recognizes your voice and responds naturally.',f2_title:'Intelligent chat',f2_desc:'Claude Opus under the hood. Understands context, remembers conversations, responds smartly.',f3_title:'Calendar & email',f3_desc:'Reads and summarizes for you. Adds events, reminds you of meetings.',f4_title:'Weather & news',f4_desc:'Real-time info from around the world. Forecasts, headlines, exchange rates.',f5_title:'Dev mode',f5_desc:'Self-repairs its own code. Self-healing architecture with confirmation.',f6_title:'Multilingual',f6_desc:'15 languages with natural voice. Czech, English, German and more.',showcase_title:'Desktop & mobile',how_title:'How it works',step1_title:'Install',step1_desc:'Desktop app for macOS or mobile PWA in your browser',step2_title:'Activate',step2_desc:'Say "Hey Nova" or type in the chat',step3_title:'Communicate',step3_desc:'Nova responds with voice and text, handles tasks for you',tech_title:'Built on the best',cta_title:'Try Nova',cta_sub:'Download the desktop app or open on mobile',cta_mac:'macOS App',cta_pwa:'Mobile PWA',footer:'Nova AI Assistant — made by FxLooper'},
+de:{nav_features:'Funktionen',nav_how:'So funktioniert\'s',nav_tech:'Tech',nav_download:'Download',hero_sub:'Dein persönlicher KI-Assistent',hero_cta:'Jetzt starten',features_title:'Was Nova kann',f1_title:'Sprachsteuerung',f1_desc:'Sag Nova was du brauchst. Erkennt deine Stimme und antwortet natürlich.',f2_title:'Intelligenter Chat',f2_desc:'Claude Opus im Hintergrund. Versteht Kontext, merkt sich Gespräche, antwortet klug.',f3_title:'Kalender & E-Mails',f3_desc:'Liest und fasst für dich zusammen. Erstellt Termine, erinnert an Meetings.',f4_title:'Wetter & Nachrichten',f4_desc:'Aktuelle Infos aus aller Welt. Vorhersage, Schlagzeilen, Wechselkurse.',f5_title:'Dev-Modus',f5_desc:'Repariert eigenständig ihren Code. Self-Healing-Architektur mit Bestätigung.',f6_title:'Mehrsprachig',f6_desc:'15 Sprachen mit natürlicher Stimme. Tschechisch, Englisch, Deutsch und mehr.',showcase_title:'Desktop & Mobil',how_title:'So funktioniert\'s',step1_title:'Installieren',step1_desc:'Desktop-App für macOS oder mobile PWA im Browser',step2_title:'Aktivieren',step2_desc:'Sag „Hey Nova" oder schreib in den Chat',step3_title:'Kommunizieren',step3_desc:'Nova antwortet per Stimme und Text, erledigt Aufgaben für dich',tech_title:'Gebaut auf dem Besten',cta_title:'Nova ausprobieren',cta_sub:'Lade die Desktop-App herunter oder öffne sie mobil',cta_mac:'macOS App',cta_pwa:'Mobile PWA',footer:'Nova AI Assistant — erstellt von FxLooper'},
+fr:{nav_features:'Fonctions',nav_how:'Comment ça marche',nav_tech:'Tech',nav_download:'Télécharger',hero_sub:'Votre assistant IA personnel',hero_cta:'Commencer',features_title:'Ce que Nova peut faire',f1_title:'Commande vocale',f1_desc:'Dites à Nova ce dont vous avez besoin. Reconnaît votre voix et répond naturellement.',f2_title:'Chat intelligent',f2_desc:'Claude Opus sous le capot. Comprend le contexte, mémorise les conversations.',f3_title:'Calendrier & emails',f3_desc:'Lit et résume pour vous. Ajoute des événements, rappelle vos réunions.',f4_title:'Météo & actualités',f4_desc:'Infos en temps réel du monde entier. Prévisions, titres, taux de change.',f5_title:'Mode dev',f5_desc:'Répare son propre code. Architecture auto-réparatrice avec confirmation.',f6_title:'Multilingue',f6_desc:'15 langues avec voix naturelle. Tchèque, anglais, allemand et plus.',showcase_title:'Bureau & mobile',how_title:'Comment ça marche',step1_title:'Installer',step1_desc:'Application bureau pour macOS ou PWA mobile',step2_title:'Activer',step2_desc:'Dites « Hey Nova » ou écrivez dans le chat',step3_title:'Communiquer',step3_desc:'Nova répond par la voix et le texte, gère vos tâches',tech_title:'Construit sur le meilleur',cta_title:'Essayez Nova',cta_sub:'Téléchargez l\'app ou ouvrez sur mobile',cta_mac:'macOS App',cta_pwa:'PWA Mobile',footer:'Nova AI Assistant — créé par FxLooper'},
+es:{nav_features:'Funciones',nav_how:'Cómo funciona',nav_tech:'Tech',nav_download:'Descargar',hero_sub:'Tu asistente personal de IA',hero_cta:'Empezar',features_title:'Qué puede hacer Nova',f1_title:'Control por voz',f1_desc:'Dile a Nova lo que necesitas. Reconoce tu voz y responde de forma natural.',f2_title:'Chat inteligente',f2_desc:'Claude Opus bajo el capó. Entiende el contexto, recuerda conversaciones.',f3_title:'Calendario y correo',f3_desc:'Lee y resume por ti. Añade eventos, recuerda reuniones.',f4_title:'Clima y noticias',f4_desc:'Información en tiempo real de todo el mundo. Pronósticos, titulares, tipos de cambio.',f5_title:'Modo dev',f5_desc:'Repara su propio código. Arquitectura autoreparable con confirmación.',f6_title:'Multilingüe',f6_desc:'15 idiomas con voz natural. Checo, inglés, alemán y más.',showcase_title:'Escritorio y móvil',how_title:'Cómo funciona',step1_title:'Instalar',step1_desc:'App de escritorio para macOS o PWA móvil',step2_title:'Activar',step2_desc:'Di "Hey Nova" o escribe en el chat',step3_title:'Comunicar',step3_desc:'Nova responde con voz y texto, realiza tareas por ti',tech_title:'Construido sobre lo mejor',cta_title:'Prueba Nova',cta_sub:'Descarga la app o ábrela en el móvil',cta_mac:'macOS App',cta_pwa:'PWA Móvil',footer:'Nova AI Assistant — creado por FxLooper'},
+it:{nav_features:'Funzioni',nav_how:'Come funziona',nav_tech:'Tech',nav_download:'Scarica',hero_sub:'Il tuo assistente IA personale',hero_cta:'Inizia ora',features_title:'Cosa può fare Nova',f1_title:'Controllo vocale',f1_desc:'Dì a Nova cosa ti serve. Riconosce la tua voce e risponde in modo naturale.',f2_title:'Chat intelligente',f2_desc:'Claude Opus sotto il cofano. Comprende il contesto, ricorda le conversazioni.',f3_title:'Calendario ed email',f3_desc:'Legge e riassume per te. Aggiunge eventi, ricorda appuntamenti.',f4_title:'Meteo e notizie',f4_desc:'Info in tempo reale da tutto il mondo. Previsioni, titoli, tassi di cambio.',f5_title:'Modalità dev',f5_desc:'Ripara il proprio codice. Architettura self-healing con conferma.',f6_title:'Multilingue',f6_desc:'15 lingue con voce naturale. Ceco, inglese, tedesco e altro.',showcase_title:'Desktop e mobile',how_title:'Come funziona',step1_title:'Installa',step1_desc:'App desktop per macOS o PWA mobile nel browser',step2_title:'Attiva',step2_desc:'Dì "Hey Nova" o scrivi nella chat',step3_title:'Comunica',step3_desc:'Nova risponde con voce e testo, gestisce i compiti per te',tech_title:'Costruito sul meglio',cta_title:'Prova Nova',cta_sub:'Scarica l\'app desktop o apri su mobile',cta_mac:'macOS App',cta_pwa:'PWA Mobile',footer:'Nova AI Assistant — creato da FxLooper'},
+pt:{nav_features:'Recursos',nav_how:'Como funciona',nav_tech:'Tech',nav_download:'Baixar',hero_sub:'Seu assistente pessoal de IA',hero_cta:'Começar',features_title:'O que Nova pode fazer',f1_title:'Controle por voz',f1_desc:'Diga ao Nova o que precisa. Reconhece sua voz e responde naturalmente.',f2_title:'Chat inteligente',f2_desc:'Claude Opus por baixo. Entende contexto, lembra conversas, responde de forma inteligente.',f3_title:'Calendário e emails',f3_desc:'Lê e resume para você. Adiciona eventos, lembra de reuniões.',f4_title:'Clima e notícias',f4_desc:'Informações em tempo real do mundo todo. Previsões, manchetes, câmbio.',f5_title:'Modo dev',f5_desc:'Repara seu próprio código. Arquitetura auto-reparável com confirmação.',f6_title:'Multilíngue',f6_desc:'15 idiomas com voz natural. Tcheco, inglês, alemão e mais.',showcase_title:'Desktop e mobile',how_title:'Como funciona',step1_title:'Instale',step1_desc:'App desktop para macOS ou PWA mobile no navegador',step2_title:'Ative',step2_desc:'Diga "Hey Nova" ou escreva no chat',step3_title:'Comunique',step3_desc:'Nova responde com voz e texto, realiza tarefas por você',tech_title:'Construído no melhor',cta_title:'Experimente Nova',cta_sub:'Baixe o app ou abra no celular',cta_mac:'macOS App',cta_pwa:'PWA Mobile',footer:'Nova AI Assistant — criado por FxLooper'},
+ja:{nav_features:'機能',nav_how:'使い方',nav_tech:'技術',nav_download:'ダウンロード',hero_sub:'あなたのパーソナルAIアシスタント',hero_cta:'始める',features_title:'Novaにできること',f1_title:'音声操作',f1_desc:'Novaに必要なことを伝えてください。あなたの声を認識し、自然に応答します。',f2_title:'インテリジェントチャット',f2_desc:'Claude Opusを搭載。文脈を理解し、会話を記憶し、賢く応答します。',f3_title:'カレンダーとメール',f3_desc:'あなたの代わりに読んで要約。イベント追加、会議のリマインド。',f4_title:'天気とニュース',f4_desc:'世界中のリアルタイム情報。予報、ヘッドライン、為替レート。',f5_title:'開発モード',f5_desc:'自分のコードを自己修復。確認付きのセルフヒーリングアーキテクチャ。',f6_title:'多言語対応',f6_desc:'15の言語で自然な音声。チェコ語、英語、ドイツ語など。',showcase_title:'デスクトップ＆モバイル',how_title:'使い方',step1_title:'インストール',step1_desc:'macOS用デスクトップアプリまたはモバイルPWA',step2_title:'アクティベート',step2_desc:'「Hey Nova」と言うか、チャットに入力',step3_title:'コミュニケーション',step3_desc:'Novaが音声とテキストで応答し、タスクを実行',tech_title:'最高の技術で構築',cta_title:'Novaを試す',cta_sub:'デスクトップアプリをダウンロードまたはモバイルで開く',cta_mac:'macOS App',cta_pwa:'モバイルPWA',footer:'Nova AI Assistant — FxLooper制作'},
+zh:{nav_features:'功能',nav_how:'工作原理',nav_tech:'技术',nav_download:'下载',hero_sub:'您的个人AI助手',hero_cta:'开始使用',features_title:'Nova能做什么',f1_title:'语音控制',f1_desc:'告诉Nova您需要什么。识别您的声音并自然回应。',f2_title:'智能聊天',f2_desc:'内置Claude Opus。理解上下文，记住对话，智能回答。',f3_title:'日历与邮件',f3_desc:'为您阅读和总结。添加日程，提醒会议。',f4_title:'天气与新闻',f4_desc:'来自全球的实时信息。预报、头条、汇率。',f5_title:'开发模式',f5_desc:'自我修复代码。带确认的自愈架构。',f6_title:'多语言',f6_desc:'15种语言的自然语音。捷克语、英语、德语等。',showcase_title:'桌面与移动端',how_title:'工作原理',step1_title:'安装',step1_desc:'macOS桌面应用或浏览器中的移动PWA',step2_title:'激活',step2_desc:'说"Hey Nova"或在聊天中输入',step3_title:'交流',step3_desc:'Nova通过语音和文字回应，为您执行任务',tech_title:'基于最佳技术构建',cta_title:'试试Nova',cta_sub:'下载桌面应用或在移动端打开',cta_mac:'macOS应用',cta_pwa:'移动PWA',footer:'Nova AI助手 — FxLooper出品'},
+ko:{nav_features:'기능',nav_how:'작동 방식',nav_tech:'기술',nav_download:'다운로드',hero_sub:'당신의 개인 AI 어시스턴트',hero_cta:'시작하기',features_title:'Nova가 할 수 있는 것',f1_title:'음성 제어',f1_desc:'Nova에게 필요한 것을 말하세요. 음성을 인식하고 자연스럽게 응답합니다.',f2_title:'지능형 채팅',f2_desc:'Claude Opus 탑재. 맥락을 이해하고 대화를 기억하며 똑똑하게 응답합니다.',f3_title:'캘린더 & 이메일',f3_desc:'대신 읽고 요약해줍니다. 일정 추가, 미팅 알림.',f4_title:'날씨 & 뉴스',f4_desc:'전 세계 실시간 정보. 예보, 헤드라인, 환율.',f5_title:'개발 모드',f5_desc:'자체 코드를 수리합니다. 확인이 있는 셀프힐링 아키텍처.',f6_title:'다국어',f6_desc:'15개 언어의 자연스러운 음성. 체코어, 영어, 독일어 등.',showcase_title:'데스크톱 & 모바일',how_title:'작동 방식',step1_title:'설치',step1_desc:'macOS 데스크톱 앱 또는 모바일 PWA',step2_title:'활성화',step2_desc:'"Hey Nova"라고 말하거나 채팅에 입력',step3_title:'소통',step3_desc:'Nova가 음성과 텍스트로 응답하고 작업을 수행',tech_title:'최고의 기술로 구축',cta_title:'Nova 체험하기',cta_sub:'데스크톱 앱을 다운로드하거나 모바일에서 열기',cta_mac:'macOS 앱',cta_pwa:'모바일 PWA',footer:'Nova AI Assistant — FxLooper 제작'},
+ar:{nav_features:'الميزات',nav_how:'كيف يعمل',nav_tech:'التقنية',nav_download:'تحميل',hero_sub:'مساعدك الشخصي بالذكاء الاصطناعي',hero_cta:'ابدأ الآن',features_title:'ماذا يمكن لـ Nova أن يفعل',f1_title:'التحكم الصوتي',f1_desc:'أخبر Nova بما تحتاجه. يتعرف على صوتك ويستجيب بشكل طبيعي.',f2_title:'دردشة ذكية',f2_desc:'Claude Opus تحت الغطاء. يفهم السياق، يتذكر المحادثات، يجيب بذكاء.',f3_title:'التقويم والبريد',f3_desc:'يقرأ ويلخص نيابة عنك. يضيف أحداثاً، يذكرك بالاجتماعات.',f4_title:'الطقس والأخبار',f4_desc:'معلومات فورية من جميع أنحاء العالم. توقعات، عناوين، أسعار صرف.',f5_title:'وضع المطور',f5_desc:'يصلح كوده بنفسه. بنية ذاتية الإصلاح مع التأكيد.',f6_title:'متعدد اللغات',f6_desc:'15 لغة بصوت طبيعي. التشيكية والإنجليزية والألمانية وغيرها.',showcase_title:'سطح المكتب والهاتف',how_title:'كيف يعمل',step1_title:'ثبّت',step1_desc:'تطبيق سطح المكتب لـ macOS أو PWA للهاتف',step2_title:'فعّل',step2_desc:'قل "Hey Nova" أو اكتب في الدردشة',step3_title:'تواصل',step3_desc:'Nova يستجيب بالصوت والنص، ينفذ المهام نيابة عنك',tech_title:'مبني على الأفضل',cta_title:'جرّب Nova',cta_sub:'حمّل التطبيق أو افتحه على الهاتف',cta_mac:'تطبيق macOS',cta_pwa:'PWA للهاتف',footer:'Nova AI Assistant — صنعه FxLooper'},
+ru:{nav_features:'Функции',nav_how:'Как это работает',nav_tech:'Технологии',nav_download:'Скачать',hero_sub:'Ваш персональный ИИ-ассистент',hero_cta:'Начать',features_title:'Что умеет Nova',f1_title:'Голосовое управление',f1_desc:'Скажите Nova что вам нужно. Распознаёт ваш голос и отвечает естественно.',f2_title:'Умный чат',f2_desc:'Claude Opus под капотом. Понимает контекст, помнит разговоры, отвечает умно.',f3_title:'Календарь и почта',f3_desc:'Читает и резюмирует за вас. Добавляет события, напоминает о встречах.',f4_title:'Погода и новости',f4_desc:'Актуальная информация со всего мира. Прогноз, заголовки, курсы валют.',f5_title:'Режим разработки',f5_desc:'Сама чинит свой код. Самовосстанавливающаяся архитектура с подтверждением.',f6_title:'Мультиязычность',f6_desc:'15 языков с естественным голосом. Чешский, английский, немецкий и другие.',showcase_title:'Десктоп и мобайл',how_title:'Как это работает',step1_title:'Установите',step1_desc:'Приложение для macOS или мобильное PWA в браузере',step2_title:'Активируйте',step2_desc:'Скажите «Hey Nova» или напишите в чат',step3_title:'Общайтесь',step3_desc:'Nova отвечает голосом и текстом, выполняет задачи за вас',tech_title:'Построено на лучшем',cta_title:'Попробуйте Nova',cta_sub:'Скачайте приложение или откройте на мобильном',cta_mac:'macOS App',cta_pwa:'Мобильное PWA',footer:'Nova AI Assistant — создано FxLooper'}
+};
+
+const LANG_LABELS={cs:'CS',en:'EN',de:'DE',fr:'FR',es:'ES',it:'IT',pt:'PT',ja:'日本',zh:'中文',ko:'한국',ar:'عربي',ru:'RU'};
+
+function setLang(lang){
+  if(!T[lang])return;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(T[lang][key])el.textContent=T[lang][key];
+  });
+  document.documentElement.lang=lang;
+  document.body.dir=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  localStorage.setItem('nova_lang',lang);
+}
+
+// Build switcher
+const sw=document.getElementById('langSwitcher');
+LANGS.forEach(l=>{
+  const b=document.createElement('button');
+  b.className='lang-btn';b.dataset.lang=l;b.textContent=LANG_LABELS[l];
+  b.onclick=()=>setLang(l);
+  sw.appendChild(b);
+});
+setLang(localStorage.getItem('nova_lang')||navigator.language?.slice(0,2)||'en');
 </script>
 </body>
 </html>
