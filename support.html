@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova — Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#f5f0e8;color:#1a1a2e;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(245,240,232,0.85)}
+.nav-logo{font-size:20px;font-weight:300;letter-spacing:0.25em;color:#1a1a2e;opacity:0.8;text-decoration:none}
+.nav-links{display:flex;gap:32px}
+.nav-links a{text-decoration:none;color:#1a1a2e;opacity:0.5;font-size:14px;font-weight:400;transition:opacity 0.3s}
+.nav-links a:hover{opacity:0.9}
+
+/* HEADER */
+.page-header{padding:160px 40px 80px;text-align:center;background:#f5f0e8}
+.page-title{font-size:48px;font-weight:300;letter-spacing:0.25em;color:#1a1a2e;opacity:0.85;margin-bottom:16px}
+.page-sub{font-size:14px;font-weight:300;color:#1a1a2e;opacity:0.45;letter-spacing:0.08em;text-transform:uppercase}
+
+/* CONTACT CARD */
+.contact-section{padding:40px 40px 60px;background:#ede8df}
+.contact-card{max-width:780px;margin:0 auto;background:#f5f0e8;padding:48px;border-radius:20px;border:1px solid rgba(26,26,46,0.08);text-align:center}
+.contact-card h2{font-size:20px;font-weight:500;letter-spacing:0.06em;margin-bottom:16px;opacity:0.9}
+.contact-card p{font-size:15px;font-weight:300;opacity:0.65;margin-bottom:24px}
+.contact-email{display:inline-block;padding:14px 32px;border:1.5px solid rgba(26,26,46,0.25);border-radius:999px;color:#1a1a2e;text-decoration:none;font-size:15px;font-weight:400;letter-spacing:0.04em;transition:all 0.3s}
+.contact-email:hover{background:rgba(26,26,46,0.06);border-color:rgba(26,26,46,0.4)}
+.response-note{margin-top:20px;font-size:12px;opacity:0.45;letter-spacing:0.04em}
+
+/* CONTENT */
+.content-section{padding:20px 40px 120px;background:#ede8df}
+.content{max-width:780px;margin:0 auto;background:#f5f0e8;padding:64px;border-radius:20px;border:1px solid rgba(26,26,46,0.08)}
+.content h2{font-size:22px;font-weight:500;letter-spacing:0.06em;margin:40px 0 16px;color:#1a1a2e;opacity:0.9;border-bottom:1px solid rgba(26,26,46,0.1);padding-bottom:12px}
+.content h2:first-child{margin-top:0}
+.content h3{font-size:16px;font-weight:500;letter-spacing:0.04em;margin:24px 0 10px;color:#1a1a2e;opacity:0.85}
+.content p{font-size:15px;font-weight:300;color:#1a1a2e;opacity:0.75;margin-bottom:14px}
+.content ul{margin:10px 0 18px 24px}
+.content li{font-size:15px;font-weight:300;color:#1a1a2e;opacity:0.75;margin-bottom:8px}
+.content strong{font-weight:500;opacity:0.95}
+.content a{color:#1a1a2e;opacity:0.7;text-decoration:underline;text-decoration-color:rgba(26,26,46,0.25);text-underline-offset:3px;transition:opacity 0.3s}
+.content a:hover{opacity:1}
+.content code{font-family:'SF Mono',monospace;font-size:13px;background:rgba(26,26,46,0.06);padding:2px 8px;border-radius:6px;opacity:0.8}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid rgba(26,26,46,0.08);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:15px;font-weight:500;color:#1a1a2e;opacity:0.9;margin-bottom:8px;letter-spacing:0.02em}
+.faq-a{font-size:14px;font-weight:300;color:#1a1a2e;opacity:0.7;line-height:1.7}
+
+/* FOOTER */
+.footer{padding:40px;text-align:center;font-size:13px;font-weight:300;opacity:0.4;border-top:1px solid rgba(26,26,46,0.08);background:#f5f0e8}
+.footer a{color:#1a1a2e;text-decoration:none;opacity:0.7;margin:0 12px}
+.footer a:hover{opacity:1}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:16px 20px}
+  .nav-links{gap:20px}
+  .nav-links a{font-size:12px}
+  .page-header{padding:120px 20px 60px}
+  .page-title{font-size:32px;letter-spacing:0.2em}
+  .contact-section{padding:20px 20px 40px}
+  .contact-card{padding:32px 24px}
+  .content-section{padding:20px 20px 80px}
+  .content{padding:32px 24px}
+  .content h2{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/Nova-website/" class="nav-logo">nova</a>
+  <div class="nav-links">
+    <a href="/Nova-website/">Home</a>
+    <a href="/Nova-website/privacy.html">Privacy</a>
+    <a href="/Nova-website/support.html">Support</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1 class="page-title">support</h1>
+  <p class="page-sub">We're here to help</p>
+</header>
+
+<section class="contact-section">
+  <div class="contact-card">
+    <h2>Get in touch</h2>
+    <p>Questions, bugs, feature ideas — drop us a line.</p>
+    <a href="mailto:fxlooper.business@gmail.com" class="contact-email">fxlooper.business@gmail.com</a>
+    <div class="response-note">Typical response within 1–2 business days</div>
+  </div>
+</section>
+
+<section class="content-section">
+  <article class="content">
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Does Nova send my voice to a cloud service?</div>
+      <div class="faq-a">No. Nova connects only to <strong>your own backend server</strong>, which you set up and control. There is no "Nova cloud" we operate. The wake word ("Hey Nova") runs entirely on your iPhone using Apple's on-device speech recognition.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I try Nova without a backend server?</div>
+      <div class="faq-a">Yes. Use <strong>Demo / Guest mode</strong> on the welcome screen. In demo mode the app makes no network connections — you can explore the UI, the orb, and the wake word locally.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I connect my own Nova backend?</div>
+      <div class="faq-a">During onboarding, enter your backend URL and authentication token. The app stores these in the iOS Keychain. The backend can run on a home server, a VPS, or behind Tailscale — Nova will reach it as long as the URL is reachable from your iPhone.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">The wake word doesn't trigger. What can I do?</div>
+      <div class="faq-a">Make sure microphone permission is granted in <strong>Settings → Nova → Microphone</strong>. The wake word also requires the app to be in the foreground or to have run in the background recently. If you have a heavy accent, try the alternative phrases ("Hi Nova", "Ahoj Nova", "Ok Nova") or re-record your voice profile in <strong>Voice ID settings</strong>.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Voice ID doesn't recognize me.</div>
+      <div class="faq-a">Re-enroll your voice from the Voice ID screen. Speak the enrollment phrases in a quiet environment, holding the phone the way you normally would. The app uses anti-spoofing checks, so playing back a recording of yourself will not authenticate.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How big a video can I upload?</div>
+      <div class="faq-a">Up to 200 MB per upload. Larger files will be rejected client-side before the upload starts.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Why does the app need my location?</div>
+      <div class="faq-a">Only for queries that explicitly need it — weather, "what's near me", local search. Location is sent only when in use, only when relevant, and never written to any local log.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Does Nova work offline?</div>
+      <div class="faq-a">Wake word detection and demo mode work offline. Anything that requires Claude (the language model) needs network access to your backend, which in turn needs to reach the model provider.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I delete my data?</div>
+      <div class="faq-a">Delete the app to remove everything stored on your iPhone (settings, keychain, conversation cache). Server-side data lives on <strong>your</strong> backend — you control retention there.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I use Nova without speaking aloud?</div>
+      <div class="faq-a">Yes. Tap the keyboard icon to type instead of speaking. All conversational features work in text mode.</div>
+    </div>
+
+    <h2>Reporting a bug</h2>
+    <p>When emailing about a bug, please include:</p>
+    <ul>
+      <li>iPhone model and iOS version</li>
+      <li>Nova app version (Settings → About)</li>
+      <li>What you did, what you expected, what actually happened</li>
+      <li>Screenshot or screen recording if possible</li>
+    </ul>
+
+    <h2>Feature requests</h2>
+    <p>We read every email. If there's something you want Nova to do, tell us — small ideas and big ones both welcome.</p>
+
+    <h2>Privacy</h2>
+    <p>For details on how Nova handles data, see the <a href="/Nova-website/privacy.html">privacy policy</a>.</p>
+
+  </article>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="/Nova-website/">Home</a>
+    <a href="/Nova-website/privacy.html">Privacy</a>
+    <a href="/Nova-website/support.html">Support</a>
+  </div>
+  <p style="margin-top:16px">© 2026 Nova by fxlooper</p>
+</footer>
+
+</body>
+</html>

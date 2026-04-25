@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova — Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#f5f0e8;color:#1a1a2e;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(245,240,232,0.85)}
+.nav-logo{font-size:20px;font-weight:300;letter-spacing:0.25em;color:#1a1a2e;opacity:0.8;text-decoration:none}
+.nav-links{display:flex;gap:32px}
+.nav-links a{text-decoration:none;color:#1a1a2e;opacity:0.5;font-size:14px;font-weight:400;transition:opacity 0.3s}
+.nav-links a:hover{opacity:0.9}
+
+/* HEADER */
+.page-header{padding:160px 40px 80px;text-align:center;background:#f5f0e8}
+.page-title{font-size:48px;font-weight:300;letter-spacing:0.25em;color:#1a1a2e;opacity:0.85;margin-bottom:16px}
+.page-sub{font-size:14px;font-weight:300;color:#1a1a2e;opacity:0.45;letter-spacing:0.08em;text-transform:uppercase}
+
+/* CONTENT */
+.content-section{padding:40px 40px 120px;background:#ede8df}
+.content{max-width:780px;margin:0 auto;background:#f5f0e8;padding:64px;border-radius:20px;border:1px solid rgba(26,26,46,0.08)}
+.content h2{font-size:22px;font-weight:500;letter-spacing:0.06em;margin:40px 0 16px;color:#1a1a2e;opacity:0.9;border-bottom:1px solid rgba(26,26,46,0.1);padding-bottom:12px}
+.content h2:first-child{margin-top:0}
+.content h3{font-size:16px;font-weight:500;letter-spacing:0.04em;margin:28px 0 10px;color:#1a1a2e;opacity:0.85}
+.content p{font-size:15px;font-weight:300;color:#1a1a2e;opacity:0.75;margin-bottom:14px}
+.content ul{margin:10px 0 18px 24px}
+.content li{font-size:15px;font-weight:300;color:#1a1a2e;opacity:0.75;margin-bottom:8px}
+.content strong{font-weight:500;opacity:0.95}
+.content a{color:#1a1a2e;opacity:0.7;text-decoration:underline;text-decoration-color:rgba(26,26,46,0.25);text-underline-offset:3px;transition:opacity 0.3s}
+.content a:hover{opacity:1}
+.content code{font-family:'SF Mono',monospace;font-size:13px;background:rgba(26,26,46,0.06);padding:2px 8px;border-radius:6px;opacity:0.8}
+.meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid rgba(26,26,46,0.1)}
+.meta-item{font-size:13px;font-weight:400;color:#1a1a2e;opacity:0.55;letter-spacing:0.04em}
+.meta-item strong{font-weight:500;opacity:0.85;margin-right:6px}
+.callout{background:rgba(26,26,46,0.04);border-left:3px solid rgba(26,26,46,0.25);padding:20px 24px;border-radius:8px;margin:20px 0}
+.callout p{margin:0;opacity:0.85}
+
+/* FOOTER */
+.footer{padding:40px;text-align:center;font-size:13px;font-weight:300;opacity:0.4;border-top:1px solid rgba(26,26,46,0.08);background:#f5f0e8}
+.footer a{color:#1a1a2e;text-decoration:none;opacity:0.7;margin:0 12px}
+.footer a:hover{opacity:1}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:16px 20px}
+  .nav-links{gap:20px}
+  .nav-links a{font-size:12px}
+  .page-header{padding:120px 20px 60px}
+  .page-title{font-size:32px;letter-spacing:0.2em}
+  .content-section{padding:20px 20px 80px}
+  .content{padding:32px 24px}
+  .content h2{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/Nova-website/" class="nav-logo">nova</a>
+  <div class="nav-links">
+    <a href="/Nova-website/">Home</a>
+    <a href="/Nova-website/privacy.html">Privacy</a>
+    <a href="/Nova-website/support.html">Support</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1 class="page-title">privacy</h1>
+  <p class="page-sub">How Nova handles your data</p>
+</header>
+
+<section class="content-section">
+  <article class="content">
+
+    <div class="meta">
+      <div class="meta-item"><strong>Last updated:</strong>2026-04-25</div>
+      <div class="meta-item"><strong>App version:</strong>13.4.7</div>
+    </div>
+
+    <h2>Summary</h2>
+    <p>Nova is a personal voice assistant. The app on your iPhone is a client — all your data is processed on <strong>your own private Nova backend server</strong> which you control. We (the app developer) do not run any cloud service, do not collect telemetry, and do not have access to your conversations, voice recordings, or location.</p>
+
+    <div class="callout">
+      <p>If you use the <strong>Demo / Guest mode</strong>, no server connection is made and no data leaves your device.</p>
+    </div>
+
+    <h2>What data the app handles</h2>
+
+    <h3>Audio (microphone)</h3>
+    <ul>
+      <li><strong>Why:</strong> to transcribe what you say and recognize who is speaking (voice ID).</li>
+      <li><strong>Where it goes:</strong> sent over an encrypted connection to <strong>your own Nova backend</strong> for transcription. Voice ID enrollment samples and the resulting profile are stored on your backend.</li>
+      <li><strong>What we do not do:</strong> we do not send audio to any third party, we do not retain audio after transcription unless you explicitly enable history on your backend, we do not train any model with your voice.</li>
+    </ul>
+
+    <h3>Speech recognition (on-device)</h3>
+    <p>The wake word ("Hey Nova", "Hi Nova", "Ahoj Nova", "Ok Nova") runs <strong>entirely on your device</strong> using Apple's <code>SFSpeechRecognizer</code>. Audio used for wake word detection never leaves the iPhone.</p>
+
+    <h3>Photos and videos</h3>
+    <ul>
+      <li><strong>Why:</strong> when you ask Nova to describe a photo, read text, or analyze a video, the file is uploaded to your backend.</li>
+      <li><strong>Where it goes:</strong> to <strong>your own Nova backend</strong> only.</li>
+      <li><strong>Limit:</strong> videos up to 200 MB.</li>
+    </ul>
+
+    <h3>Location</h3>
+    <ul>
+      <li><strong>Why:</strong> so Nova can answer "what's the weather here", "find the nearest pharmacy", etc.</li>
+      <li><strong>When:</strong> only while the app is in use, only when a query needs it.</li>
+      <li><strong>Where it goes:</strong> to <strong>your own Nova backend</strong> as a coarse coordinate. Coordinates are <strong>not written to any local log</strong> in version 13.4.7+.</li>
+    </ul>
+
+    <h3>Notifications</h3>
+    <p>Used for scheduled tasks ("remind me at 8pm") and Live Activity / Dynamic Island updates during a conversation. No content is sent through Apple Push servers — Live Activities update locally.</p>
+
+    <h3>Camera</h3>
+    <p>Only when you explicitly tap the camera button to capture a photo for Nova to analyze.</p>
+
+    <h3>Local network</h3>
+    <p>Nova connects to your Nova backend on your local network or via Tailscale VPN. We do not scan the network for any other purpose.</p>
+
+    <h2>Data we do NOT collect</h2>
+    <ul>
+      <li>No analytics SDK, no crash reporter, no advertising ID.</li>
+      <li>No account on any server we run — there is no "Nova cloud".</li>
+      <li>No third-party tracking.</li>
+    </ul>
+
+    <h2>Where data is stored</h2>
+    <ul>
+      <li><strong>On your iPhone:</strong> your backend server URL, your voice ID profile reference, conversation history (if enabled), keychain credentials for your backend.</li>
+      <li><strong>On your Nova backend:</strong> whatever your backend configuration retains. You control this.</li>
+      <li><strong>Nowhere else.</strong></li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>Nova is rated 4+ but is intended for general audiences. We do not knowingly collect data from children because we do not collect data at all.</p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li>Revoke microphone, camera, location, photos, or notifications at any time in iOS Settings → Nova.</li>
+      <li>Use <strong>Demo / Guest mode</strong> to try the app with zero network connections.</li>
+      <li>Delete the app to remove all locally stored data; ask your backend admin to delete server-side data.</li>
+    </ul>
+
+    <h2>Encryption</h2>
+    <ul>
+      <li>All connections to your backend use TLS / HTTPS.</li>
+      <li>Backend credentials are stored in iOS Keychain.</li>
+      <li>The app uses only standard Apple cryptography and does not implement custom encryption (<code>ITSAppUsesNonExemptEncryption = false</code>).</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, the "Last updated" date at the top will change. Material changes will be announced in the app's release notes.</p>
+
+    <h2>Contact</h2>
+    <ul>
+      <li><strong>Developer:</strong> Ondřej Hladík (fxlooper)</li>
+      <li><strong>Email:</strong> <a href="mailto:fxlooper.business@gmail.com">fxlooper.business@gmail.com</a></li>
+      <li><strong>Support:</strong> <a href="/Nova-website/support.html">support page</a></li>
+    </ul>
+
+  </article>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="/Nova-website/">Home</a>
+    <a href="/Nova-website/privacy.html">Privacy</a>
+    <a href="/Nova-website/support.html">Support</a>
+  </div>
+  <p style="margin-top:16px">© 2026 Nova by fxlooper</p>
+</footer>
+
+</body>
+</html>
